@@ -1,0 +1,224 @@
+<div class="border">
+  <button class="btn btn-md btn-outline-primary" (click)="open(content)">
+    <i class="fa fa-user"></i>New Friend</button>
+</div>
+
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Department</th>
+      <th>Email</th>
+      <th>Country</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr >
+      <td><span>1</span></td>
+      <td><span>test</span></td>
+      <td><span>Name</span></td>
+      <td><span>CSE</span></td>
+      <td><span>test@gmail.com</span></td>
+      <td><span>USA</span></td>
+	  <td>
+  <button class="btn btn-sm btn-info" (click)="openDetails(contentDetails, friend)">
+    <i class="fa fa-search"></i>Details</button>
+  <button class="btn btn-sm btn-warning" (click)="openEdit(contentEdit, friend)">
+    <i class="fa fa-edit"></i>Edit</button>
+  <button class="btn btn-sm btn-danger" (click)="openDelete(contentDelete, friend)">
+    <i class="fa fa-remove"></i>Delete</button>
+</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--- Details View-->
+<ng-template #contentDetails let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+  <div class="form-group">
+    <label for="firstname">Firstname</label>
+    <div class="input-group">
+      <input id="fname" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Lastname</label>
+    <div class="input-group">
+      <input id="lname" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="department">Department</label>
+    <div class="input-group">
+      <input id="dept" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <div class="input-group">
+      <input id="email2" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label> Country</label>
+    <div class="input-group">
+      <input id="cntry" class="form-control">
+    </div>
+  </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+  
+</form>
+  </div>
+  
+</ng-template>
+<!--- End  Details View--> 
+<!-- add Data-->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div class="form-group">
+    <label for="firstname">Firstname</label>
+    <div class="input-group">
+      <input id="fname" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Lastname</label>
+    <div class="input-group">
+      <input id="lname" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="department">Department</label>
+    <div class="input-group">
+      <input id="dept" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <div class="input-group">
+      <input id="email2" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label> Country</label>
+    <div class="input-group">
+      <input id="cntry" class="form-control">
+    </div>
+  </div>
+  <div class="border text-center">
+<button data-dismiss="modal" class="btn btn-info">Submit</button>
+</div>
+
+</form>
+
+
+
+  </div>
+  
+</ng-template>
+
+
+
+
+
+
+<!--- end of add data-->
+
+<ng-template #contentEdit let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form >
+  <div class="form-group">
+    <label for="firstname">Firstname</label>
+    <div class="input-group">
+      <input id="fname" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Lastname</label>
+    <div class="input-group">
+      <input id="lname" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="department">Department</label>
+    <div class="input-group">
+      <input id="dept" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <div class="input-group">
+      <input id="email2" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label> Country</label>
+    <div class="input-group">
+      <input id="cntry" class="form-control">
+    </div>
+  </div>
+  <div class="border text-center">
+<button data-dismiss="modal" class="btn btn-info">Submit</button>
+</div>
+
+</form>
+
+
+
+  </div>
+  
+</ng-template>
+
+
+
+<!-- Delete data-->
+
+<ng-template #contentDelete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Confirm Delete</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h2>Are you sure you want to delete this record.</h2>
+    <div class="border text-center"> 
+      <button data-dismiss="modal" class="btn btn-danger">Yes, Delete!</button> 
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+  </div>
+</ng-template>
+
+
+<!--delete data-->
+
+
+

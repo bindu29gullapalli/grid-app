@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <a href="/friends"
+         role="button"
+         class="btn btn-outline-primary btn-lg btn-block text-center">
+        <span><i class="fa fa-users"></i></span>
+        <br>Friends
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+<ag-grid-angular class="ag-theme-alpine" 
+[pagination]="'true'"
+[rowSelection]="true"
+[animateRows]="true"
+  style="height: 500px; width: 500px" 
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+	
+[rowSelection]="'multiple'" [editType]="'fullRow'"
+[animateRows]="true" [paginationPageSize]="paginationPageSize" [groupDisplayType]="'custom'"
+            (rowClicked)="onRowClick($event)" #agGrid (gridReady)="onGridReady($event)"
+            [suppressRowTransform]="true"	
+	>
+  </ag-grid-angular>
+  
+ 
+		
+		
+
